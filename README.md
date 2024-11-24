@@ -29,7 +29,7 @@ This project is a deep dive into Object-Oriented Programming (OOP) concepts in P
 
 ## 🚀 Get Started:
 ```bash
-$ git clone https://github.com/yourusername/Robot-Adventure.git
+$ git clone https://github.com/sakhileln/Robot-Adventure.git
 $ cd Robot-Adventure
 home/sakhi/Robot-Adventure$ python main.py
 ```
