@@ -37,14 +37,19 @@ class Robot(RobotBase):
         x, y = self.__position
         self.__position = (x + dx, y + dy)
         print(
-            f"{self.name} moved forward by {distance} meters to {self.__position}"
+            f"{self.name} moved forward by {distance} meters to {self.__position}."
         )
 
     def turn_left(self, degrees):
         self.__facing = (self.__facing + degrees) % 360
         print(
-            f"{self.name} turned left by {degrees} degrees. Now facing {self.__facing} degrees"
+            f"{self.name} turned left by {degrees} degrees. Now facing {self.__facing} degrees."
         )
 
-    def turn_right(self, degrees): ...
+    def turn_right(self, degrees):
+        self.__facing = (self.__facing - degrees) % 360
+        print(
+            f"{self.name} turned right by {degrees} degrees. Now facing {self.__facing} degrees."
+        )
+
     def talk(self, message): ...
