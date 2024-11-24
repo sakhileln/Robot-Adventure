@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from math import radians, cos, sin
 
 
 # Abstract Base Class
@@ -29,7 +30,16 @@ class Robot(RobotBase):
     def get_position(self):
         return self.__position
 
-    def move_forward(self, distance=1): ...
+    def move_forward(self, distance=1):
+        angle_rad = radians(self.__facing)
+        dx = distance * sin(angle_rad)
+        dy = distance * cos(angle_rad)
+        x, y = self.__position
+        self.__position = (x + dx, y + dy)
+        print(
+            f"{self.name} moved forward by {distance} meters to {self.__position}"
+        )
+
     def turn_left(self, degrees): ...
     def turn_right(self, degrees): ...
     def talk(self, message): ...
