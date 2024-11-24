@@ -40,6 +40,11 @@ class Robot(RobotBase):
             f"{self.name} moved forward by {distance} meters to {self.__position}"
         )
 
-    def turn_left(self, degrees): ...
+    def turn_left(self, degrees):
+        self.__facing = (self.__facing + degrees) % 360
+        print(
+            f"{self.name} turned left by {degrees} degrees. Now facing {self.__facing} degrees"
+        )
+
     def turn_right(self, degrees): ...
     def talk(self, message): ...
