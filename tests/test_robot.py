@@ -1,4 +1,5 @@
 import unittest
+from unittest.mock import patch
 from robot import Robot
 
 class TestRobot(unittest.TestCase):
@@ -37,6 +38,13 @@ class TestRobot(unittest.TestCase):
         self.assertEqual(
             robot._Robot__facing, 0
         )
+
+    def test_talk(self):
+        """Test talking functionality."""
+        robot = Robot(name="CP3O", position=(0, 0), facing=90)
+        with patch("builtins.print") as mock_print:
+            robot.talk("Hello")
+            mock_print.assert_called_with("CP3O says: Hello")
 
 if __name__ == "__main__":
     unittest.main()
