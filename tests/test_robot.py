@@ -30,5 +30,13 @@ class TestRobot(unittest.TestCase):
             robot._Robot__facing, 180
         )
 
+    def test_turn_right(self):
+        """Test turning robot to the right."""
+        robot = Robot(name="CP3O", position=(0, 0), facing=90)
+        robot.turn_right(90)
+        self.assertEqual(
+            robot._Robot__facing, 0
+        )
+
 if __name__ == "__main__":
     unittest.main()
