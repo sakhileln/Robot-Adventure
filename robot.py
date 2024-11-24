@@ -52,4 +52,5 @@ class Robot(RobotBase):
             f"{self.name} turned right by {degrees} degrees. Now facing {self.__facing} degrees."
         )
 
-    def talk(self, message): ...
+    def talk(self, message):
+        print(f"{self.name} says: {message}")
