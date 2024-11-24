@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from math import radians, cos, sin
+from math import radians, cos, sin, sqrt
 
 
 # Abstract Base Class
@@ -63,4 +63,11 @@ class Robot(RobotBase):
     # Create dafault bot
     @classmethod
     def create_default_robot(cls):
-        return cls(name="TestBot", position=(0, 0), facing=0)
+        return cls(name="DefaultBot", position=(0, 0), facing=0)
+
+    # Static method (Disrance between two robots)
+    @staticmethod
+    def calculate_distance(robot1: Robot, robot2: Robot):
+        x1, y1 = robot1.get_position()
+        x2, y2 = robot2.get_position()
+        return sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
