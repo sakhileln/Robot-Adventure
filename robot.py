@@ -15,6 +15,8 @@ class RobotBase(ABC):
 
 
 class Robot(RobotBase):
+    """Main Robot Class that implements RobotBase"""
+
     def __init__(self, name: str, position: tuple = (0, 0), facing: int = 0):
         """
         Initializes a new robot with a given name, position, and facing direction.
@@ -30,7 +32,10 @@ class Robot(RobotBase):
     def get_position(self):
         return self.__position
 
-    def move_forward(self, distance=1):
+    def set_position(self, new_position: tuple):
+        self.__position = new_position
+
+    def move_forward(self, distance: int=1):
         angle_rad = radians(self.__facing)
         dx = distance * sin(angle_rad)
         dy = distance * cos(angle_rad)
@@ -40,17 +45,22 @@ class Robot(RobotBase):
             f"{self.name} moved forward by {distance} meters to {self.__position}."
         )
 
-    def turn_left(self, degrees):
+    def turn_left(self, degrees: int):
         self.__facing = (self.__facing + degrees) % 360
         print(
             f"{self.name} turned left by {degrees} degrees. Now facing {self.__facing} degrees."
         )
 
-    def turn_right(self, degrees):
+    def turn_right(self, degrees: int):
         self.__facing = (self.__facing - degrees) % 360
         print(
             f"{self.name} turned right by {degrees} degrees. Now facing {self.__facing} degrees."
         )
 
-    def talk(self, message):
+    def talk(self, message: str):
         print(f"{self.name} says: {message}")
+
+    # Create dafault bot
+    @classmethod
+    def create_default_robot(cls):
+        return cls(name="TestBot", position=(0, 0), facing=0)
