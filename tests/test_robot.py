@@ -46,5 +46,12 @@ class TestRobot(unittest.TestCase):
             robot.talk("Hello")
             mock_print.assert_called_with("CP3O says: Hello")
 
+    def test_create_default_robot(self):
+        """Test Class Method (create_default_robot"""
+        robot = Robot.create_default_robot()
+        self.assertEqual(robot.name, "DefaultRobot")
+        self.assertEqual(robot.get_position(), (0, 0))
+        self.assertEqual(robot._Robot__facing, 0)
+
 if __name__ == "__main__":
     unittest.main()
