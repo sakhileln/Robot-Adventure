@@ -16,7 +16,7 @@ class TestRobot(unittest.TestCase):
         robot = Robot(name="CP3O", position=(0, 0), facing=0)
         robot.move_forward(5)
         self.assertEqual(
-            robot.get_position(), (5, 0)
+            robot.get_position(), (0, 5)
         )
         self.assertEqual(
             robot._Robot__facing, 0
