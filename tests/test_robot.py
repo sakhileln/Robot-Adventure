@@ -53,5 +53,14 @@ class TestRobot(unittest.TestCase):
         self.assertEqual(robot.get_position(), (0, 0))
         self.assertEqual(robot._Robot__facing, 0)
 
+    def test_calculate_distance(self):
+        robot1 = Robot(name="C-P3O", position=(0, 0), facing=90)
+        robot2 = Robot(name="R2-D2", position=(3, 4), facing=180)
+        distance = Robot.calculate_distance(robot1, robot2)
+        self.assertEqual(
+            round(distance, 2), 5.0
+        )
+
+
 if __name__ == "__main__":
     unittest.main()
