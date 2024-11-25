@@ -61,6 +61,15 @@ class TestRobot(unittest.TestCase):
             round(distance, 2), 5.0
         )
 
+class TestRacingRobot(unittest.TestCase):
+    def test_racing_robot_move(self):
+        """Test RacingRobot moving forward"""
+        racing_robot = RacingRobot(name="SpeedBot", position=(0, 0), facing=0)
+        racing_robot.move_forward(3)
+        self.assertEqual(
+            racing_robot.get_position(), (6, 0)
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
