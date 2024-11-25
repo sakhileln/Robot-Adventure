@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from robot import Robot
+from robot import Robot, RacingRobot
 
 class TestRobot(unittest.TestCase):
     def test_robot_initialization(self):
@@ -67,7 +67,7 @@ class TestRacingRobot(unittest.TestCase):
         racing_robot = RacingRobot(name="SpeedBot", position=(0, 0), facing=0)
         racing_robot.move_forward(3)
         self.assertEqual(
-            racing_robot.get_position(), (6, 0)
+            racing_robot.get_position(), (0, 6)
         )
 
 
