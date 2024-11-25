@@ -35,7 +35,7 @@ class Robot(RobotBase):
     def set_position(self, new_position: tuple):
         self.__position = new_position
 
-    def move_forward(self, distance: int=1):
+    def move_forward(self, distance: int = 1):
         angle_rad = radians(self.__facing)
         dx = distance * sin(angle_rad)
         dy = distance * cos(angle_rad)
@@ -72,14 +72,31 @@ class Robot(RobotBase):
         x2, y2 = robot2.get_position()
         return sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
+
 class RacingRobot(Robot):
     """Subclass for Racing Robot (Inheritance & Polymorphism)"""
+
     def __init__(self, name: str, position: tuple = (0, 0), facing=0):
         super().__init__(name, position, facing)
 
-    def move_forward(self, distance: int=2):
+    def move_forward(self, distance: int = 2):
         """Override move to move faster."""
-        super().move_forward(2 * distance) # Move twice as fast
+        super().move_forward(2 * distance)  # Move twice as fast
+
+
+class BattleBot(Robot):
+    """Subclass for Battle Bot (Inheritance & Polymorphism)"""
+
+    def __init__(
+        self: "BattleBot", name: str, position: tuple = (0, 0), facing=0
+    ) -> None:
+        super().__init__(name, position, facing)
+
+    def attack(self: "BattleBot") -> None:
+        print(f"{self.name} is attacking with laser beams!")
+
+    def talk(self: "BattleBot", message: str) -> None:
+        print(f"BattleBot {self.name} says: {message}")
 
 
 if __name__ == "__main__":
