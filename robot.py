@@ -71,3 +71,18 @@ class Robot(RobotBase):
         x1, y1 = robot1.get_position()
         x2, y2 = robot2.get_position()
         return sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+
+class RacingRobot(Robot):
+    """Subclass for Racing Robot (Inheritance & Polymorphism)"""
+    def __init__(self, name: str, position: tuple = (0, 0), facing=0):
+        super().__init__(name, position, facing)
+
+    def move_forward(self, distance: int=2):
+        """Override move to move faster."""
+        super().move_forward(2 * distance) # Move twice as fast
+
+
+if __name__ == "__main__":
+    racing_robot = RacingRobot(name="SpeedBot", position=(0, 0), facing=0)
+    racing_robot.move_forward(3)
+    pos = racing_robot.get_position()
