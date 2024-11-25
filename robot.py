@@ -72,6 +72,9 @@ class Robot(RobotBase):
         x2, y2 = robot2.get_position()
         return sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
+    def __str__(self) -> str:
+        return f"My name is: {self.name}, I am at {self.__position}, facing {self.__facing}"
+
 
 class RacingRobot(Robot):
     """Subclass for Racing Robot (Inheritance & Polymorphism)"""
