@@ -47,7 +47,7 @@ jobs:
           pip install pytest coverage
       - name: Run Tests with Coverage
         run: |
-          pytest --cov=your_module --maxfail=1 --disable-warnings -q
+          pytest --cov=robot --maxfail=1 --disable-warnings -q
       - name: Upload Coverage to Codecov (Optional, if you use Codecov)
         uses: codecov/codecov-action@v2
         with:
