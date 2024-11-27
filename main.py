@@ -2,7 +2,7 @@
 Main module that controls the program
 """
 
-from .robot import Robot, RacingRobot, BattleBot
+from robot import Robot, RacingRobot, BattleBot
 
 
 def main():
