@@ -1,8 +1,12 @@
+"""
+Main module that controls the program
+"""
+
 from robot import Robot, RacingRobot, BattleBot
 
 
 def main():
-    # Create instances
+    """Main driver for the program"""
     robot1 = Robot(name="C-P3O", position=(0, 0), facing=0)
     racing_robot = RacingRobot(name="SpeedBot", position=(5, 5), facing=45)
     battle_bot = BattleBot(name="CombatBot", position=(10, 10), facing=180)
