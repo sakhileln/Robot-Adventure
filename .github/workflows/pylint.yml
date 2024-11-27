@@ -43,8 +43,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          # pip install -r requirements.txt   If you have a requirements file, otherwise install individually
-          pip install pytest coverage
+          pip install pytest coverage pytest-cov  # Make sure pytest-cov is installed
       - name: Run Tests with Coverage
         run: |
           pytest --cov=robot --maxfail=1 --disable-warnings -q
@@ -68,4 +67,3 @@ jobs:
       - name: Check code formatting with black
         run: |
           black --check --diff .
-
