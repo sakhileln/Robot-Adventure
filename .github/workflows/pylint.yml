@@ -66,6 +66,7 @@ jobs:
       - name: Run Tests with Coverage
         run: |
           # pytest --cov=robot --maxfail=1 --disable-warnings -q
+          python -m unittest tests/test_robot.py
           coverage run -m unittest tests/test_robot.py
           coverage report -m
       - name: Upload Coverage to Codecov (Optional, if you use Codecov)
