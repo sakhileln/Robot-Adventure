@@ -65,7 +65,9 @@ jobs:
           export PYTHONPATH=$(pwd)  # Set PYTHONPATH to the current directory (root where robot.py is)
       - name: Run Tests with Coverage
         run: |
-          pytest --cov=robot --maxfail=1 --disable-warnings -q
+          # pytest --cov=robot --maxfail=1 --disable-warnings -q
+          coverage run -m unittest tests/test_robot.py
+          coverage report
       - name: Upload Coverage to Codecov (Optional, if you use Codecov)
         uses: codecov/codecov-action@v2
         with:
