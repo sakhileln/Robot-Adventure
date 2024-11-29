@@ -17,4 +17,5 @@ The following functions and classes are available:
 
 This file ensures that the robot package is initialized correctly when imported.
 """
+
 from robot.robot import *
