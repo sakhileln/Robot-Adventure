@@ -68,7 +68,7 @@ jobs:
           poetry install
       - name: Run Tests with Coverage
         run: |
-          poetry run pytest --cov=robot --maxfail=1 --disable-warnings -q
+          poetry run pytest --disable-warnings -q
       - name: Upload Coverage to Codecov (Optional, if you use Codecov)
         uses: codecov/codecov-action@v2
         with:
