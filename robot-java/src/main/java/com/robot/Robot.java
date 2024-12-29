@@ -15,6 +15,11 @@ class Robot extends RobotBase {
         robotPosition = position;
         robotFacing = facing;
     }
+    /*
+    Parameterless contructor
+    Robot() {
+    }
+    */
     // Methods
     void setPosition(double x, double y) { robotPosition.setLocation(x, y); }
 
