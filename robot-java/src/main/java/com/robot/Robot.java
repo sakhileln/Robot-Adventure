@@ -39,6 +39,6 @@ class Robot extends RobotBase {
         System.out.print(robotName + " turned left by " + degrees + " degrees. Now facing ");
         System.out.println(robotFacing + " degrees.");
     }
-    String talk(String message) { return ""; }
+    void talk(String message) { return ""; }
 
 }
