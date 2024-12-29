@@ -8,9 +8,9 @@ class Robot extends RobotBase {
     // Fields
     String robotName;
     private Point2D.Double robotPosition = new Point2D.Double(0, 0);
-    private int robotFacing;
+    private double robotFacing;
     // Constructor
-    public Robot(String name, Point2D.Double position, int facing) {
+    public Robot(String name, Point2D.Double position, double facing) {
         robotName = name;
         robotPosition = position;
         robotFacing = facing;
@@ -29,6 +29,16 @@ class Robot extends RobotBase {
         System.out.println("(" + robotPosition.getX() + "," + robotPosition.getY() + ")");
     }
 
-
+    void turn_left(double degrees) {
+        robotFacing = (robotFacing + degrees) % 360;
+        System.out.print(robotName + " turned right by " + degrees + " degrees. Now facing ");
+        System.out.println(robotFacing + " degrees.");
+    }
+    void turn_right(double degrees) {
+        robotFacing = (robotFacing - degrees) % 360;
+        System.out.print(robotName + " turned left by " + degrees + " degrees. Now facing ");
+        System.out.println(robotFacing + " degrees.");
+    }
+    String talk(String message) { return ""; }
 
 }
