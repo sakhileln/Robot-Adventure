@@ -52,4 +52,7 @@ class Robot extends RobotBase {
         /* Calculate distance */
         return Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
     }
+    static Robot create_default_robot() {
+        return new Robot("DefaultRobot", new Point2D.Double(0,0), 0);
+    }
 }
