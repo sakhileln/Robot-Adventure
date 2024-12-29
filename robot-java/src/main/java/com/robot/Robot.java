@@ -7,13 +7,13 @@ import java.awt.geom.Point2D;
 class Robot extends RobotBase {
     // Fields
     String robotName;
-    private Point2D.Double robotPosition = new Point2D.Double(0, 0);
+    private Point2D.Double robotPosition;
     private double robotFacing;
     // Constructor
     public Robot(String name, Point2D.Double position, double facing) {
-        robotName = name;
-        robotPosition = position;
-        robotFacing = facing;
+        this.robotName = name;
+        this.robotPosition = position;
+        this.robotFacing = facing;
     }
     /*
     Parameterless contructor
