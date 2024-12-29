@@ -55,4 +55,13 @@ class Robot extends RobotBase {
     static Robot create_default_robot() {
         return new Robot("DefaultRobot", new Point2D.Double(0,0), 0);
     }
+
+    @Override
+    public String toString() {
+        return "My name is: " +
+                robotName +
+                ", I am at " +
+                "(" + robotPosition.getY() + "," + robotPosition.getY() + ")" +
+                " facing " + robotFacing;
+    }
 }
