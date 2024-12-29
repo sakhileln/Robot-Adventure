@@ -16,6 +16,11 @@ class Robot extends RobotBase {
         robotFacing = facing;
     }
     // Methods
+    void setPosition(double x, double y) { robotPosition.setLocation(x, y); }
+
+    double getFacing() { return robotFacing; }
+    Point2D.Double getPosition() { return robotPosition; }
+
     void move_forward(double distance) {
         double angle_rad = Math.toRadians(robotFacing);
         double dx = distance * Math.sin(angle_rad);
