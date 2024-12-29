@@ -41,4 +41,15 @@ class Robot extends RobotBase {
     }
     void talk(String message) { System.out.println(robotName + " says " + message); }
 
+    // Static method
+    static double calculateDistance(Robot robot1, Robot robot2) {
+        Point2D.Double p1 = robot1.robotPosition;
+        Point2D.Double p2 = robot2.robotPosition;
+        double x1 = p1.getX();
+        double y1 = p1.getY();
+        double x2 = p2.getX();
+        double y2 = p2.getY();
+        /* Calculate distance */
+        return Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+    }
 }
