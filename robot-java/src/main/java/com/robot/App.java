@@ -27,5 +27,13 @@ public class App
 
         battle_bot.attack();
         battle_bot.talk("Prepare to fight!");
+
+        /* Test static methods */
+        Robot default_robot = Robot.create_default_robot();
+        System.out.println(default_robot.toString());
+
+        double distance = Robot.calculateDistance(robot1, battle_bot);
+        System.out.print("Distance between Robot1 and Battlebot: ");
+        System.out.println(distance);
     }
 }
